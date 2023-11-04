@@ -1,0 +1,14 @@
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:297:22:LL_SPI_Enable	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:320:26:LL_SPI_IsEnabled	2
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:731:26:LL_SPI_IsActiveFlag_RXNE	2
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:742:26:LL_SPI_IsActiveFlag_TXE	2
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:1075:25:LL_SPI_ReceiveData8	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:1098:22:LL_SPI_TransmitData8	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:881:22:LL_GPIO_SetOutputPin	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:910:22:LL_GPIO_ResetOutputPin	1
+../Core/Src/Device/d_MPU6500.c:23:6:SPI_Control	6
+../Core/Src/Device/d_MPU6500.c:48:9:readByte	1
+../Core/Src/Device/d_MPU6500.c:67:6:writeByte	1
+../Core/Src/Device/d_MPU6500.c:84:6:initIMU	3
+../Core/Src/Device/d_MPU6500.c:109:7:readGyroOmegaZ	1
+../Core/Src/Device/d_MPU6500.c:117:7:readGyroAccelX	1

@@ -1,0 +1,8 @@
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1124:22:LL_TIM_EnableCounter	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1135:22:LL_TIM_DisableCounter	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:3457:22:LL_TIM_EnableIT_UPDATE	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:3468:22:LL_TIM_DisableIT_UPDATE	1
+../Core/Src/Device/d_basic_timer.c:17:6:basicTimerStart	1
+../Core/Src/Device/d_basic_timer.c:25:6:basicTimerPause	1
+../Core/Src/Device/d_basic_timer.c:34:6:waitMs	1
+../Core/Src/Device/d_basic_timer.c:42:6:waitUs	3
