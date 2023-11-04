@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "System/s_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -218,7 +219,11 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 void TIM1_UP_TIM10_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
+	doCallbackTask();
 
+	if(LL_TIM_IsActiveFlag_UPDATE(TIM10)){
+		LL_TIM_ClearFlag_UPDATE(TIM10);
+	}
   /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
 
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */

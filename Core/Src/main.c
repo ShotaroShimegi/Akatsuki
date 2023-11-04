@@ -25,15 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include<stdio.h>
 
-#include"System/s_test.h"
-
-#include"Device/d_MPU6500.h"
-#include"Device/d_TLA2518.h"
-#include"Device/d_encoder.h"
-#include"Device/d_indicator.h"
-#include"Device/d_basic_timer.h"
+#include"System/s_task.h"
 
 /* USER CODE END Includes */
 
@@ -132,24 +125,18 @@ int main(void) {
   MX_TIM4_Init();
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
-  printf("Akatsuki System Open\n");
-  initIMU();
-  initTLA2518();
-  enableEncoder();
+  doInitializeTask();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 printf("From main loop\n");
-	 lightIndicators(0xf0);
-	 waitMs(500);
-	 lightIndicators(0x00);
-	 waitMs(500);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  doloopTask();
   }
   /* USER CODE END 3 */
 }
