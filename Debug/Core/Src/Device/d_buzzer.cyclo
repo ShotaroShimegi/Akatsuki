@@ -4,10 +4,10 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1446:22:LL_TIM_SetAutoReload	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1609:22:LL_TIM_CC_EnableChannel	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1634:22:LL_TIM_CC_DisableChannel	1
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2117:22:LL_TIM_OC_SetCompareCH1	1
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2168:22:LL_TIM_OC_SetCompareCH4	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1851:22:LL_TIM_OC_SetIdleState	7
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2134:22:LL_TIM_OC_SetCompareCH2	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2992:22:LL_TIM_EnableAllOutputs	1
 ../Core/Src/Device/d_buzzer.c:22:6:enableMelody	1
-../Core/Src/Device/d_buzzer.c:30:6:disableMelody	1
-../Core/Src/Device/d_buzzer.c:35:6:stopMelody	1
-../Core/Src/Device/d_buzzer.c:39:6:Melody	1
+../Core/Src/Device/d_buzzer.c:37:6:disableMelody	1
+../Core/Src/Device/d_buzzer.c:42:6:stopMelody	1
+../Core/Src/Device/d_buzzer.c:46:6:Melody	1

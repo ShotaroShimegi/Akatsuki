@@ -42,7 +42,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+extern uint32_t count1,count2,count_a,count_tim5;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -200,20 +200,6 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM1 break interrupt and TIM9 global interrupt.
-  */
-void TIM1_BRK_TIM9_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 0 */
-
-  /* USER CODE END TIM1_BRK_TIM9_IRQn 0 */
-
-  /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 1 */
-
-  /* USER CODE END TIM1_BRK_TIM9_IRQn 1 */
-}
-
-/**
   * @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
   */
 void TIM1_UP_TIM10_IRQHandler(void)
@@ -232,25 +218,32 @@ void TIM1_UP_TIM10_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM4 global interrupt.
-  */
-void TIM4_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM4_IRQn 0 */
-
-  /* USER CODE END TIM4_IRQn 0 */
-  /* USER CODE BEGIN TIM4_IRQn 1 */
-
-  /* USER CODE END TIM4_IRQn 1 */
-}
-
-/**
   * @brief This function handles TIM5 global interrupt.
   */
-void TIM5_IRQHandler(void)
-{
+void TIM5_IRQHandler(void) {
   /* USER CODE BEGIN TIM5_IRQn 0 */
+	count_tim5++;
+	// 左モータのHigh周期
+	if(LL_TIM_IsActiveFlag_CC1(TIM5)){
+		LL_TIM_ClearFlag_CC1(TIM5);
+		count1++;
+		doMotorLeftCallbackTask();
+		return;
+	}
+	if(LL_TIM_IsActiveFlag_CC2(TIM5)){
+		LL_TIM_ClearFlag_CC2(TIM5);
+		count2++;
+		doMotorRightCallbackTask();
+		return;
+	}
+	// 両モータのタイマを再度設定
+	if(LL_TIM_IsActiveFlag_UPDATE(TIM5)){
+		LL_TIM_ClearFlag_UPDATE(TIM5);
+		count_a++;
+		doMotorBothCallbackTask();
 
+		return;
+	}
   /* USER CODE END TIM5_IRQn 0 */
   /* USER CODE BEGIN TIM5_IRQn 1 */
 

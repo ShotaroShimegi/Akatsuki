@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/Unit/u_dial.c 
+../Core/Src/Unit/u_dial.c \
+../Core/Src/Unit/u_music.c 
 
 C_DEPS += \
-./Core/Src/Unit/u_dial.d 
+./Core/Src/Unit/u_dial.d \
+./Core/Src/Unit/u_music.d 
 
 OBJS += \
-./Core/Src/Unit/u_dial.o 
+./Core/Src/Unit/u_dial.o \
+./Core/Src/Unit/u_music.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Core/Src/Unit/%.o Core/Src/Unit/%.su Core/Src/Unit/%.cyclo: ../Core/Src/Unit/%.c
 clean: clean-Core-2f-Src-2f-Unit
 
 clean-Core-2f-Src-2f-Unit:
-	-$(RM) ./Core/Src/Unit/u_dial.cyclo ./Core/Src/Unit/u_dial.d ./Core/Src/Unit/u_dial.o ./Core/Src/Unit/u_dial.su
+	-$(RM) ./Core/Src/Unit/u_dial.cyclo ./Core/Src/Unit/u_dial.d ./Core/Src/Unit/u_dial.o ./Core/Src/Unit/u_dial.su ./Core/Src/Unit/u_music.cyclo ./Core/Src/Unit/u_music.d ./Core/Src/Unit/u_music.o ./Core/Src/Unit/u_music.su
 
 .PHONY: clean-Core-2f-Src-2f-Unit
 

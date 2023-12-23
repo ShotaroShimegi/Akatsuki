@@ -59,7 +59,7 @@ void MX_GPIO_Init(void)
 
   /**/
   LL_GPIO_ResetOutputPin(GPIOB, IFL_LED1_Pin|IFL_LED2_Pin|IFL_LED3_Pin|IFR_LED1_Pin
-                          |GYRO_CS_Pin|ADC_CS_Pin|MOTOR_R_IN1_Pin|MOTOR_R_IN2_Pin);
+                          |GYRO_CS_Pin|ADC_CS_Pin|MOTOR_R_IN2_Pin|MOTOR_R_IN1_Pin);
 
   /**/
   GPIO_InitStruct.Pin = SEN_LED_R_Pin|SEN_LED_L_Pin;
@@ -80,7 +80,7 @@ void MX_GPIO_Init(void)
 
   /**/
   GPIO_InitStruct.Pin = IFL_LED1_Pin|IFL_LED2_Pin|IFL_LED3_Pin|IFR_LED1_Pin
-                          |GYRO_CS_Pin|ADC_CS_Pin|MOTOR_R_IN1_Pin|MOTOR_R_IN2_Pin;
+                          |GYRO_CS_Pin|ADC_CS_Pin|MOTOR_R_IN2_Pin|MOTOR_R_IN1_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;

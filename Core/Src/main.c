@@ -84,7 +84,8 @@ int _write(int file, char *ptr, int len) {
   * @brief  The application entry point.
   * @retval int
   */
-int main(void) {
+int main(void)
+{
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -120,7 +121,6 @@ int main(void) {
   MX_TIM2_Init();
   MX_TIM3_Init();
   MX_TIM10_Init();
-  MX_TIM9_Init();
   MX_TIM11_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();

@@ -10,7 +10,8 @@ C_SRCS += \
 ../Core/Src/Device/d_basic_timer.c \
 ../Core/Src/Device/d_buzzer.c \
 ../Core/Src/Device/d_encoder.c \
-../Core/Src/Device/d_indicator.c 
+../Core/Src/Device/d_indicator.c \
+../Core/Src/Device/d_motor.c 
 
 C_DEPS += \
 ./Core/Src/Device/d_MPU6500.d \
@@ -18,7 +19,8 @@ C_DEPS += \
 ./Core/Src/Device/d_basic_timer.d \
 ./Core/Src/Device/d_buzzer.d \
 ./Core/Src/Device/d_encoder.d \
-./Core/Src/Device/d_indicator.d 
+./Core/Src/Device/d_indicator.d \
+./Core/Src/Device/d_motor.d 
 
 OBJS += \
 ./Core/Src/Device/d_MPU6500.o \
@@ -26,7 +28,8 @@ OBJS += \
 ./Core/Src/Device/d_basic_timer.o \
 ./Core/Src/Device/d_buzzer.o \
 ./Core/Src/Device/d_encoder.o \
-./Core/Src/Device/d_indicator.o 
+./Core/Src/Device/d_indicator.o \
+./Core/Src/Device/d_motor.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +39,7 @@ Core/Src/Device/%.o Core/Src/Device/%.su Core/Src/Device/%.cyclo: ../Core/Src/De
 clean: clean-Core-2f-Src-2f-Device
 
 clean-Core-2f-Src-2f-Device:
-	-$(RM) ./Core/Src/Device/d_MPU6500.cyclo ./Core/Src/Device/d_MPU6500.d ./Core/Src/Device/d_MPU6500.o ./Core/Src/Device/d_MPU6500.su ./Core/Src/Device/d_TLA2518.cyclo ./Core/Src/Device/d_TLA2518.d ./Core/Src/Device/d_TLA2518.o ./Core/Src/Device/d_TLA2518.su ./Core/Src/Device/d_basic_timer.cyclo ./Core/Src/Device/d_basic_timer.d ./Core/Src/Device/d_basic_timer.o ./Core/Src/Device/d_basic_timer.su ./Core/Src/Device/d_buzzer.cyclo ./Core/Src/Device/d_buzzer.d ./Core/Src/Device/d_buzzer.o ./Core/Src/Device/d_buzzer.su ./Core/Src/Device/d_encoder.cyclo ./Core/Src/Device/d_encoder.d ./Core/Src/Device/d_encoder.o ./Core/Src/Device/d_encoder.su ./Core/Src/Device/d_indicator.cyclo ./Core/Src/Device/d_indicator.d ./Core/Src/Device/d_indicator.o ./Core/Src/Device/d_indicator.su
+	-$(RM) ./Core/Src/Device/d_MPU6500.cyclo ./Core/Src/Device/d_MPU6500.d ./Core/Src/Device/d_MPU6500.o ./Core/Src/Device/d_MPU6500.su ./Core/Src/Device/d_TLA2518.cyclo ./Core/Src/Device/d_TLA2518.d ./Core/Src/Device/d_TLA2518.o ./Core/Src/Device/d_TLA2518.su ./Core/Src/Device/d_basic_timer.cyclo ./Core/Src/Device/d_basic_timer.d ./Core/Src/Device/d_basic_timer.o ./Core/Src/Device/d_basic_timer.su ./Core/Src/Device/d_buzzer.cyclo ./Core/Src/Device/d_buzzer.d ./Core/Src/Device/d_buzzer.o ./Core/Src/Device/d_buzzer.su ./Core/Src/Device/d_encoder.cyclo ./Core/Src/Device/d_encoder.d ./Core/Src/Device/d_encoder.o ./Core/Src/Device/d_encoder.su ./Core/Src/Device/d_indicator.cyclo ./Core/Src/Device/d_indicator.d ./Core/Src/Device/d_indicator.o ./Core/Src/Device/d_indicator.su ./Core/Src/Device/d_motor.cyclo ./Core/Src/Device/d_motor.d ./Core/Src/Device/d_motor.o ./Core/Src/Device/d_motor.su
 
 .PHONY: clean-Core-2f-Src-2f-Device
 

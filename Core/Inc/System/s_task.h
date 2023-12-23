@@ -11,7 +11,8 @@
 void doInitializeTask(void);
 void doloopTask(void);
 void doCallbackTask(void);
-
-
+void doMotorLeftCallbackTask(void);
+void doMotorRightCallbackTask(void);
+void doMotorBothCallbackTask(void);
 
 #endif /* INC_SYSTEM_S_TASK_H_ */

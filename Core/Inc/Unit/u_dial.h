@@ -10,7 +10,15 @@
 
 #include<stdint.h>
 
-uint8_t inputDial(void);
+typedef struct {
+	uint8_t mode;
+	uint16_t row_value;
+	float ratio;
+}t_dial;
 
+void startDial();
+void stopDial();
+t_dial convertDialStruct(uint16_t cnt);
+uint8_t selectDial(uint8_t phase);
 
 #endif /* INC_UNIT_U_DIAL_H_ */

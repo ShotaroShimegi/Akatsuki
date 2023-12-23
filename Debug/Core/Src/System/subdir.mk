@@ -5,14 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/System/s_mode.c \
 ../Core/Src/System/s_task.c \
 ../Core/Src/System/s_test.c 
 
 C_DEPS += \
+./Core/Src/System/s_mode.d \
 ./Core/Src/System/s_task.d \
 ./Core/Src/System/s_test.d 
 
 OBJS += \
+./Core/Src/System/s_mode.o \
 ./Core/Src/System/s_task.o \
 ./Core/Src/System/s_test.o 
 
@@ -24,7 +27,7 @@ Core/Src/System/%.o Core/Src/System/%.su Core/Src/System/%.cyclo: ../Core/Src/Sy
 clean: clean-Core-2f-Src-2f-System
 
 clean-Core-2f-Src-2f-System:
-	-$(RM) ./Core/Src/System/s_task.cyclo ./Core/Src/System/s_task.d ./Core/Src/System/s_task.o ./Core/Src/System/s_task.su ./Core/Src/System/s_test.cyclo ./Core/Src/System/s_test.d ./Core/Src/System/s_test.o ./Core/Src/System/s_test.su
+	-$(RM) ./Core/Src/System/s_mode.cyclo ./Core/Src/System/s_mode.d ./Core/Src/System/s_mode.o ./Core/Src/System/s_mode.su ./Core/Src/System/s_task.cyclo ./Core/Src/System/s_task.d ./Core/Src/System/s_task.o ./Core/Src/System/s_task.su ./Core/Src/System/s_test.cyclo ./Core/Src/System/s_test.d ./Core/Src/System/s_test.o ./Core/Src/System/s_test.su
 
 .PHONY: clean-Core-2f-Src-2f-System
 

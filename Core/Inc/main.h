@@ -105,10 +105,10 @@ void Error_Handler(void);
 #define GYRO_CS_GPIO_Port GPIOB
 #define ADC_CS_Pin LL_GPIO_PIN_7
 #define ADC_CS_GPIO_Port GPIOB
-#define MOTOR_R_IN1_Pin LL_GPIO_PIN_8
-#define MOTOR_R_IN1_GPIO_Port GPIOB
-#define MOTOR_R_IN2_Pin LL_GPIO_PIN_9
+#define MOTOR_R_IN2_Pin LL_GPIO_PIN_8
 #define MOTOR_R_IN2_GPIO_Port GPIOB
+#define MOTOR_R_IN1_Pin LL_GPIO_PIN_9
+#define MOTOR_R_IN1_GPIO_Port GPIOB
 #ifndef NVIC_PRIORITYGROUP_0
 #define NVIC_PRIORITYGROUP_0         ((uint32_t)0x00000007) /*!< 0 bit  for pre-emption priority,
                                                                  4 bits for subpriority */

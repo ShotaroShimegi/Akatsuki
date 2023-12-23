@@ -9,5 +9,6 @@
 #define INC_SYSTEM_S_TEST_H_
 
 void testEncoder(void);
+void testMotor(void);
 
 #endif /* INC_SYSTEM_S_TEST_H_ */
