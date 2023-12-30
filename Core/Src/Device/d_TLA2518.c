@@ -109,7 +109,7 @@ void tlaWriteByte(uint8_t addres,uint8_t data) {
 // @param addres 書き込みたいデータのアドレス（IMU側データシートを参照）
 // @param addres 書き込みたいデータの内容（IMU側データシートを参照）
 //+++++++++++++++++++++++++++++++++++++++++++++++
-void initTLA2518(void){
+void dtla_initTLA2518(void){
 	LL_SPI_Enable(SPI1);
 
 	uint8_t default_value = tlaReadByte(SYSTEM_CONFIG_ADDR);

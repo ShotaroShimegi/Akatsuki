@@ -17,7 +17,7 @@ uint8_t duty_right_abs = 0;
 * @brief main loop 	モータ回転を有効化する。最初はdutyを1%にしておく
 * 		 TIM5 -> 左Duty_HIGH区
 */
-void enableMotors(void){
+void dm_enableMotors(void){
 	//モータを動かし始める
 	LL_TIM_EnableIT_CC1(TIM5);
 	LL_TIM_EnableIT_CC2(TIM5);
@@ -39,7 +39,7 @@ void enableMotors(void){
 /**
 * @brief 左モータを静止する。急速に止まるはず。
 */
-void brakeLeftMotors(void){
+void dm_brakeLeftMotors(void){
 	// 左モータについて
 	LL_GPIO_SetOutputPin(MOTOR_L_IN1_GPIO_Port,MOTOR_L_IN1_Pin);
 	LL_GPIO_SetOutputPin(MOTOR_L_IN2_GPIO_Port,MOTOR_L_IN2_Pin);
@@ -48,7 +48,7 @@ void brakeLeftMotors(void){
 /**
 * @brief 右モータを静止する。急速に止まるはず。
 */
-void brakeRightMotors(void){
+void dm_brakeRightMotors(void){
 	// 左モータについて
 	LL_GPIO_SetOutputPin(MOTOR_R_IN1_GPIO_Port,MOTOR_R_IN1_Pin);
 	LL_GPIO_SetOutputPin(MOTOR_R_IN2_GPIO_Port,MOTOR_R_IN2_Pin);
@@ -57,14 +57,14 @@ void brakeRightMotors(void){
 /**
 * @brief モータを静止する。急速に止まるはず。
 */
-void brakeMotors(void){
-	brakeLeftMotors();
-	brakeRightMotors();
+void dm_brakeMotors(void){
+	dm_brakeLeftMotors();
+	dm_brakeRightMotors();
 }
 /**
 * @brief モータを静止する。慣性で回るはず
 */
-void smoothMotors(void){
+void dm_smoothMotors(void){
 	// 左モータについて
 	LL_GPIO_ResetOutputPin(MOTOR_L_IN1_GPIO_Port,MOTOR_L_IN1_Pin);
 	LL_GPIO_ResetOutputPin(MOTOR_L_IN2_GPIO_Port,MOTOR_L_IN2_Pin);
@@ -76,7 +76,7 @@ void smoothMotors(void){
 * @brief モータを静止する。急速に止まるはず。
 * @param 回転方向, 0:Forward, 1:Back
 */
-void driveRightMotor(uint8_t dir){
+void dm_driveRightMotor(uint8_t dir){
 	if(dir == FORWARD){
 		LL_GPIO_ResetOutputPin(MOTOR_R_IN1_GPIO_Port,MOTOR_R_IN1_Pin);
 		LL_GPIO_SetOutputPin(MOTOR_R_IN2_GPIO_Port,MOTOR_R_IN2_Pin);
@@ -85,7 +85,7 @@ void driveRightMotor(uint8_t dir){
 		LL_GPIO_ResetOutputPin(MOTOR_R_IN2_GPIO_Port,MOTOR_R_IN2_Pin);
 	}
 }
-void driveLeftMotor(uint8_t dir){
+void dm_driveLeftMotor(uint8_t dir){
 	if(dir == FORWARD){
 		LL_GPIO_ResetOutputPin(MOTOR_L_IN1_GPIO_Port,MOTOR_L_IN1_Pin);
 		LL_GPIO_SetOutputPin(MOTOR_L_IN2_GPIO_Port,MOTOR_L_IN2_Pin);
@@ -98,7 +98,7 @@ void driveLeftMotor(uint8_t dir){
 /**
 * @brief モータ回転を無効化する。duty関連はHIGHにしておく。
 */
-void disableMotors(void){
+void dm_disableMotors(void){
 	// 完全に一回止める
 	LL_TIM_DisableCounter(TIM5);
 
@@ -107,13 +107,13 @@ void disableMotors(void){
 	LL_TIM_DisableIT_CC2(TIM5);
 
 	// 念のため、モータの設定を止めておく
-	brakeMotors();
+	dm_brakeMotors();
 }
 
 /**
 * @brief 割込み処理で呼ばれる関数、
 */
-void driveMotors(int8_t duty_left, int8_t duty_right){
+void dm_driveMotors(int8_t duty_left, int8_t duty_right){
 	// 符号から回転方向を変数に保存
 	if(duty_left > 0)	{
 		motor_left_dir = FORWARD;
@@ -144,14 +144,14 @@ void driveMotors(int8_t duty_left, int8_t duty_right){
 * @param 0xf0 -> 左モータ、0x0f -> 右モータ
 * @return 次のタイマのcounter.period
 */
-uint16_t updateMotors(uint8_t which){
+uint16_t dm_updateMotors(uint8_t which){
 	switch(which){
 		case LEFT_MOTOR:
-			driveLeftMotor(motor_left_dir);
+			dm_driveLeftMotor(motor_left_dir);
 			return 2*duty_left_abs;
 			break;
 		case RIGHT_MOTOR:
-			driveRightMotor(motor_right_dir);
+			dm_driveRightMotor(motor_right_dir);
 			return 2*duty_right_abs;
 			break;
 		default:

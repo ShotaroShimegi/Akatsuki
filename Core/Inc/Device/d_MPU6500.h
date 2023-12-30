@@ -28,9 +28,8 @@
 /*============================================================
 		関数プロトタイプ宣言
 ============================================================*/
-void initIMU();
-float readGyroOmegaZ(void);
-float readGyroAccelX(void);
-
+void dmpu_initIMU();
+float dmpu_readGyroOmegaZ(void);
+float dmpu_readGyroAccelX(void);
 
 #endif /* INC_DEVICE_D_MPU6500_H_ */

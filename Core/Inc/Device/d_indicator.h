@@ -16,17 +16,16 @@ enum{
 	LED_ON
 };
 // 表示用LEDの制御変更
-void lightRightLED1(bool);
-void lightRightLED2(bool);
-void lightRightLED3(bool);
-void lightLeftLED1(bool);
-void lightLeftLED2(bool);
-void lightLeftLED3(bool);
+void di_lightRightLED1(bool);
+void di_lightRightLED2(bool);
+void di_lightRightLED3(bool);
+void di_lightLeftLED1(bool);
+void di_lightLeftLED2(bool);
+void di_lightLeftLED3(bool);
 
 // 表示用一括変更用のLED制御関数
-void lightRightLEDs(uint8_t command);
-void lightLeftLEDs(uint8_t command);
-void lightIndicators(uint8_t command);
-
+void di_lightRightLEDs(uint8_t command);
+void di_lightLeftLEDs(uint8_t command);
+void di_lightIndicators(uint8_t command);
 
 #endif /* INC_DEVICE_D_INDICATOR_H_ */

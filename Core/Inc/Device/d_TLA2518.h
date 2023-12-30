@@ -42,16 +42,16 @@
 /*============================================================
 		関数プロトタイプ宣言
 ============================================================*/
-void initTLA2518();
+void dtla_initTLA2518();
 
 //  ********　以下の関数は工事中 ********
-uint16_t getAdcCH0();
-uint16_t getAdcCH1();
-uint16_t getAdcCH2();
-uint16_t getAdcCH3();
-uint16_t getAdcCH4();
-uint16_t getAdcCH5();
-uint16_t getAdcCH6();
-uint16_t getAdcCH7();
+uint16_t dtla_getAdcCH0();
+uint16_t dtla_getAdcCH1();
+uint16_t dtla_getAdcCH2();
+uint16_t dtla_getAdcCH3();
+uint16_t dtla_getAdcCH4();
+uint16_t dtla_getAdcCH5();
+uint16_t dtla_getAdcCH6();
+uint16_t dtla_getAdcCH7();
 
 #endif /* INC_DEVICE_D_TLA2518_H_ */

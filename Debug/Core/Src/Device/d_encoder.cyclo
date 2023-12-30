@@ -1,7 +1,7 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1124:22:LL_TIM_EnableCounter	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1135:22:LL_TIM_DisableCounter	1
-../Core/Src/Device/d_encoder.c:20:6:enableEncoder	1
-../Core/Src/Device/d_encoder.c:37:6:disableEncoder	1
-../Core/Src/Device/d_encoder.c:45:6:resetEncoders	1
-../Core/Src/Device/d_encoder.c:55:6:updateEncoders	3
-../Core/Src/Device/d_encoder.c:83:9:getEncoderData	5
+../Core/Src/Device/d_encoder.c:20:6:de_enableEncoder	1
+../Core/Src/Device/d_encoder.c:37:6:de_disableEncoder	1
+../Core/Src/Device/d_encoder.c:45:6:de_resetEncoders	1
+../Core/Src/Device/d_encoder.c:55:6:de_updateEncoders	3
+../Core/Src/Device/d_encoder.c:83:9:de_getEncoderData	5

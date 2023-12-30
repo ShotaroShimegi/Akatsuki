@@ -7,7 +7,7 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:1851:22:LL_TIM_OC_SetIdleState	7
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2134:22:LL_TIM_OC_SetCompareCH2	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2992:22:LL_TIM_EnableAllOutputs	1
-../Core/Src/Device/d_buzzer.c:22:6:enableMelody	1
-../Core/Src/Device/d_buzzer.c:37:6:disableMelody	1
-../Core/Src/Device/d_buzzer.c:42:6:stopMelody	1
-../Core/Src/Device/d_buzzer.c:46:6:Melody	1
+../Core/Src/Device/d_buzzer.c:22:6:dbz_enableMelody	1
+../Core/Src/Device/d_buzzer.c:37:6:dbz_disableMelody	1
+../Core/Src/Device/d_buzzer.c:42:6:dbz_stopMelody	1
+../Core/Src/Device/d_buzzer.c:46:6:dbz_Melody	1

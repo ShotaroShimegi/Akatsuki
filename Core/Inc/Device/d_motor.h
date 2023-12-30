@@ -20,15 +20,15 @@ enum{
 	BACK
 };
 
-void enableMotors(void);
-void disableMotors(void);
-void brakeLeftMotors(void);
-void brakeRightMotors(void);
-void brakeMotors(void);
-void smoothMotors(void);
-void driveRightMotor(uint8_t);
-void driveLeftMotor(uint8_t);
-void driveMotors(int8_t left_duty,int8_t right_duty);
-uint16_t updateMotors(uint8_t);
+void dm_enableMotors(void);
+void dm_disableMotors(void);
+void dm_brakeLeftMotors(void);
+void dm_brakeRightMotors(void);
+void dm_brakeMotors(void);
+void dm_smoothMotors(void);
+void dm_driveRightMotor(uint8_t);
+void dm_driveLeftMotor(uint8_t);
+void dm_driveMotors(int8_t left_duty,int8_t right_duty);
+uint16_t dm_updateMotors(uint8_t);
 
 #endif /* INC_DEVICE_D_MOTOR_H_ */

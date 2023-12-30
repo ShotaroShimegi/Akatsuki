@@ -21,23 +21,26 @@
 void selectMainMode(){
 	uint8_t mode = 0;
 	// ダイアルを起動する
-	startDial();
+	ud_startDial();
 	// モード選択を実行する
-	mode = selectDial(1);
+	mode = ud_selectDial(1);
 	// ダイアルをオフにする
-	stopDial();
+	ud_stopDial();
 
-	lightIndicators(0xff),waitMs(100);
-	lightIndicators(0x00),waitMs(100);
-	lightIndicators(0xff),waitMs(100);
-	lightIndicators(0x00),waitMs(100);
+	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
+	di_lightLeftLEDs(0x00),dbt_waitMs(100);
+	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
+	di_lightLeftLEDs(0x00),dbt_waitMs(100);
 
 	switch(mode){
 		case 0:
+			printf("Mode: No-mode Search\n");
 			break;
 		case 1:
+			printf("Mode: No-mode Fast Run\n");
 			break;
 		case 2:
+			printf("Mode: No-mode Test Mode\n");
 			break;
 		case 3:
 			break;

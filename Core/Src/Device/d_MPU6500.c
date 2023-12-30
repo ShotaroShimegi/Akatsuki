@@ -81,7 +81,7 @@ void writeByte(uint8_t addres,uint8_t data)
 // @param addres 書き込みたいデータの内容（IMU側データシートを参照）
 //+++++++++++++++++++++++++++++++++++++++++++++++
 
-void initIMU(void) {
+void dmpu_initIMU(void) {
 	LL_SPI_Enable(SPI1);
 
 	uint8_t who_am_i = readByte(WHO_AM_I);
@@ -106,7 +106,7 @@ void initIMU(void) {
 	LL_mDelay(10);
 }
 
-float readGyroOmegaZ(void){
+float dmpu_readGyroOmegaZ(void){
 	int16_t omega_raw_z;
 	float real_omega;
 	omega_raw_z = (int16_t)(readByte(GYRO_ZOUT_H) << 8 | readByte(GYRO_ZOUT_L));	//0x47が上位，0x48が下位の16bitデータでジャイロ値を取得
@@ -114,7 +114,7 @@ float readGyroOmegaZ(void){
 	return real_omega;
 }
 
-float readGyroAccelX(void){
+float dmpu_readGyroAccelX(void){
 	int16_t accel_raw_x;
 	float real_accel;
 	accel_raw_x = (int16_t)(readByte(ACCEL_XOUT_H) << 8 | readByte(ACCEL_XOUT_L));	//0x47が上位，0x48が下位の16bitデータでジャイロ値を取得

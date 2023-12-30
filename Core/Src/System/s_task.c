@@ -8,6 +8,7 @@
 
 #include "System/s_test.h"
 #include "System/s_task.h"
+#include "System/s_mode.h"
 
 #include "Unit/u_music.h"
 #include "Unit/u_dial.h"
@@ -28,21 +29,21 @@ uint32_t count1,count2,count_a,count_tim5;
 * @brief main loop 	前に1度だけ行う処理
 */
 void doInitializeTask(void){
-	enableMelody();
-	waitMs(1000);
+	dbz_enableMelody();
+	dbt_waitMs(1000);
 	printf("Akatsuki System Open\n");
-	disableMotors();
-	initIMU();
-	initTLA2518();
-	MelodySummer();
-	enableEncoder();
+	dm_disableMotors();
+	dmpu_initIMU();
+	dtla_initTLA2518();
+	um_MelodySummer();
+	de_enableEncoder();
 
 //	basicTimerStart();
 
 	// 初期化修了
-	lightIndicators(0xff);
-	waitMs(500);
-	lightIndicators(0x00);
+	di_lightIndicators(0xff);
+	dbt_waitMs(500);
+	di_lightIndicators(0x00);
 }
 
 /**
@@ -66,22 +67,22 @@ void doCallbackTask(void){
 * @brief 左モータDutyHIGH周期 callbackで行う処理
 */
 void doMotorLeftCallbackTask(void){
-	brakeLeftMotors();
+	dm_brakeLeftMotors();
 }
 
 /**
 * @brief 右モータDutyHIGH周期 callbackで行う処理
 */
 void doMotorRightCallbackTask(void){
-	brakeRightMotors();
+	dm_brakeRightMotors();
 }
 
 /**
 * @brief 両方モータ
 */
 void doMotorBothCallbackTask(void){
-	LL_TIM_OC_SetCompareCH1(TIM5, updateMotors(0xf0));
-	LL_TIM_OC_SetCompareCH2(TIM5, updateMotors(0x0f));
+	LL_TIM_OC_SetCompareCH1(TIM5, dm_updateMotors(0xf0));
+	LL_TIM_OC_SetCompareCH2(TIM5, dm_updateMotors(0x0f));
 
 //	LL_TIM_SetAutoReload(TIM5,200-1);
 //	LL_TIM_SetCounter(TIM5, 0);

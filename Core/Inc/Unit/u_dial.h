@@ -16,9 +16,9 @@ typedef struct {
 	float ratio;
 }t_dial;
 
-void startDial();
-void stopDial();
-t_dial convertDialStruct(uint16_t cnt);
-uint8_t selectDial(uint8_t phase);
+void ud_startDial();
+void ud_stopDial();
+t_dial ud_convertDialStruct(uint16_t cnt);
+uint8_t ud_selectDial(uint8_t phase);
 
 #endif /* INC_UNIT_U_DIAL_H_ */

@@ -1,5 +1,5 @@
-../Core/Src/System/s_mode.c:21:6:selectMainMode	1
-../Core/Src/System/s_mode.c:57:6:selectSearchMode	1
-../Core/Src/System/s_mode.c:61:6:selectRunMode	1
-../Core/Src/System/s_mode.c:65:6:selectTestMode	1
-../Core/Src/System/s_mode.c:69:6:selectLogMode	1
+../Core/Src/System/s_mode.c:21:6:selectMainMode	4
+../Core/Src/System/s_mode.c:60:6:selectSearchMode	1
+../Core/Src/System/s_mode.c:64:6:selectRunMode	1
+../Core/Src/System/s_mode.c:68:6:selectTestMode	1
+../Core/Src/System/s_mode.c:72:6:selectLogMode	1

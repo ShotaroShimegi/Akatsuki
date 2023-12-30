@@ -50,16 +50,13 @@
 #define a7h 3729
 #define b7 3951
 
-//void stopMelody(void);
-void MelodySummer(void);
-void MelodyMrLawrence(void);
-void MelodyRayearth(void);
-void MelodyUrara(void);
-void MelodyGoal(void);
-void MelodyNatsumatsuri(void);
-void MelodyKurenai(void);
-void MelodyYamato(void);
-
-
+void um_MelodySummer(void);
+void um_MelodyMrLawrence(void);
+void um_MelodyRayearth(void);
+void um_MelodyUrara(void);
+void um_MelodyGoal(void);
+void um_MelodyNatsumatsuri(void);
+void um_MelodyKurenai(void);
+void um_MelodyYamato(void);
 
 #endif /* INC_UNIT_U_MUSIC_H_ */

@@ -17,7 +17,7 @@ int32_t enc_pulse_sigma_right;
  * enableEncoder
 * @brief　エンコーダ機能の有効化
 */
-void enableEncoder(void){
+void de_enableEncoder(void){
 	// 使用するTIM関連の初期化
 	TIM2->CNT = 0;
 	TIM3->CNT = 0;
@@ -34,7 +34,7 @@ void enableEncoder(void){
 /* disableEncoder
 * @brief　エンコーダ機能の有効化
 */
-void disableEncoder(void){
+void de_disableEncoder(void){
 	LL_TIM_DisableCounter(TIM2);
 	LL_TIM_DisableCounter(TIM3);
 }
@@ -42,7 +42,7 @@ void disableEncoder(void){
 /* resetEncoders
 * @brief　エンコーダ機能の有効化
 */
-void resetEncoders(void){
+void de_resetEncoders(void){
 	enc_pulse_sigma_left = 0;
 	enc_pulse_sigma_right = 0;
 }
@@ -52,7 +52,7 @@ void resetEncoders(void){
 * @brief エンコーダ関連の値を更新する、更新周期依存は関数の呼び出しタイミングに依存
 * @param *TIMx 取得したいエンコーダタイマ、左:TIM3,  右: TIM2
 */
-void updateEncoders(void){
+void de_updateEncoders(void){
 	uint16_t u_count_r,u_count_l;	// レジスタから保存用
 	int16_t count_r,count_l;		// 戻り値用の変数
 
@@ -80,7 +80,7 @@ void updateEncoders(void){
 * @param *TIMx 取得したいエンコーダ変数、左:TIM3,  右: TIM2
 * @return パルスカウント数
 */
-int32_t getEncoderData(uint8_t command){
+int32_t de_getEncoderData(uint8_t command){
 	switch(command){
 		case LEFT_PULSE:		return enc_pulse_left; 			break;
 		case RIGHT_PULSE:		return enc_pulse_right;			break;
@@ -89,5 +89,3 @@ int32_t getEncoderData(uint8_t command){
 	}
 	return 0;	// 使うことないけど念のため
 }
-
-

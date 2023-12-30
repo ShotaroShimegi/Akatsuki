@@ -18,14 +18,14 @@
 void testEncoder(void){
 	uint32_t total_pulse_l,total_pulse_r,pulse_r,pulse_l;
 	while(1){
-	  updateEncoders();
-	  pulse_l = getEncoderData(LEFT_PULSE);
-	  pulse_r = getEncoderData(RIGHT_PULSE);
-	  total_pulse_l = getEncoderData(LEFT_SIGMA_PULSE);
-	  total_pulse_r = getEncoderData(RIGHT_SIGMA_PULSE);
+	  de_updateEncoders();
+	  pulse_l = de_getEncoderData(LEFT_PULSE);
+	  pulse_r = de_getEncoderData(RIGHT_PULSE);
+	  total_pulse_l = de_getEncoderData(LEFT_SIGMA_PULSE);
+	  total_pulse_r = de_getEncoderData(RIGHT_SIGMA_PULSE);
 	  printf("L: %5d, R: %5d\n",pulse_l,pulse_r);
 	  printf("totalL: %5d, totalR: %5d\n",total_pulse_l,total_pulse_r);
-	  waitMs(1000);
+	  dbt_waitMs(1000);
 	}
 }
 

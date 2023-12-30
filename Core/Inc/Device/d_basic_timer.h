@@ -11,11 +11,11 @@
 #include "stdint.h"
 #include "stm32f4xx_ll_utils.h"
 
-void basicTimerCallback(void);
-void basicTimerStart(void);
-void basicTimerPause(void);
-void waitMs(uint16_t ms);
-void waitUs(uint16_t us);
+void dbt_basicTimerCallback(void);
+void dbt_basicTimerStart(void);
+void dbt_basicTimerPause(void);
+void dbt_waitMs(uint16_t ms);
+void dbt_waitUs(uint16_t us);
 
 
 #endif /* INC_DEVICE_D_BASIC_TIMER_H_ */

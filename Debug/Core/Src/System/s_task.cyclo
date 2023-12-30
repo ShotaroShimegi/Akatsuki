@@ -1,8 +1,8 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2117:22:LL_TIM_OC_SetCompareCH1	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:2134:22:LL_TIM_OC_SetCompareCH2	1
-../Core/Src/System/s_task.c:30:6:doInitializeTask	1
-../Core/Src/System/s_task.c:51:6:doloopTask	1
-../Core/Src/System/s_task.c:62:6:doCallbackTask	1
-../Core/Src/System/s_task.c:68:6:doMotorLeftCallbackTask	1
-../Core/Src/System/s_task.c:75:6:doMotorRightCallbackTask	1
-../Core/Src/System/s_task.c:82:6:doMotorBothCallbackTask	1
+../Core/Src/System/s_task.c:31:6:doInitializeTask	1
+../Core/Src/System/s_task.c:52:6:doloopTask	1
+../Core/Src/System/s_task.c:63:6:doCallbackTask	1
+../Core/Src/System/s_task.c:69:6:doMotorLeftCallbackTask	1
+../Core/Src/System/s_task.c:76:6:doMotorRightCallbackTask	1
+../Core/Src/System/s_task.c:83:6:doMotorBothCallbackTask	1

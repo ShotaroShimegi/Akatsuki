@@ -10,9 +10,9 @@
 
 #include"stdint.h"
 
-void enableMelody(void);
-void disableMelody(void);
-void Melody(uint16_t,uint16_t);
+void dbz_enableMelody(void);
+void dbz_disableMelody(void);
+void dbz_Melody(uint16_t,uint16_t);
 
 #endif /* INC_HARDWARE_BUZZER_H_ */
 

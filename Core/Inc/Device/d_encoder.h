@@ -17,10 +17,10 @@ enum{
 	,RIGHT_SIGMA_PULSE
 };
 
-void enableEncoder(void);
-void disableEncoder(void);
-void updateEncoders(void);
-void resetEncoders(void);
-int32_t getEncoderData(uint8_t command);
+void de_enableEncoder(void);
+void de_disableEncoder(void);
+void de_updateEncoders(void);
+void de_resetEncoders(void);
+int32_t de_getEncoderData(uint8_t command);
 
 #endif /* INC_DEVICE_D_ENCODER_H_ */
