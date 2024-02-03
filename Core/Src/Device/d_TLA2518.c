@@ -65,8 +65,8 @@ void tlaSPIRead(SPI_TypeDef *SPIx,uint8_t *tx_data, uint8_t *rx_data,uint8_t len
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++
-// readByte
-//	@brief  IMUのデータをリクエスト・受信する
+// tlaReadByte
+//	@brief  のデータをリクエスト・受信する
 // @param addres ほしいデータのアドレス（IMU側データシートを参照）
 // @return 抽出したデータ
 //+++++++++++++++++++++++++++++++++++++++++++++++
@@ -101,6 +101,29 @@ void tlaWriteByte(uint8_t addres,uint8_t data) {
 	trans_data[2] = data;
 
 	tlaSPIControl(SPI1, trans_data, receive_data, 3);
+}
+
+//+++++++++++++++++++++++++++++++++++++++++++++++
+// tlaReadDataFormat
+// @brief 手動モードでピン指定された後に呼び出される想定
+// @param addres ほしいデータのアドレス（IMU側データシートを参照）
+// @return 12bitに変換したADC後のデータ
+//+++++++++++++++++++++++++++++++++++++++++++++++
+uint16_t tlaReadDataFormat(uint8_t* id) {
+	uint8_t trans_data[3];
+	uint8_t receive_data[3];
+	uint16_t value = 0;
+
+	trans_data[0] = 0x00;				// ADCフェイズ用の待機と受信用の変換
+	trans_data[1] = 0x00;
+	trans_data[2] = 0x00;
+
+	tlaSPIControl(SPI1, trans_data, receive_data, 3);
+	tlaSPIRead(SPI1, trans_data, receive_data, 3);
+
+	value = ((uint16_t)receive_data[0]) << 4 | ((receive_data[1] & 0x40) >> 4);
+	*id = receive_data[1] & 0x04;
+	return value;
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++
@@ -143,3 +166,26 @@ void dtla_initTLA2518(void){
 	}
 	printf("ADC OK\n");
 }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++
+// dtla_getAdcCH
+//	@brief 特定のチャンネルからデータを抜き取る
+//+++++++++++++++++++++++++++++++++++++++++++++++
+uint16_t dtla_getAdcCH0(){
+	uint16_t value = 0;
+	uint8_t id = 9;
+	// まずは手動モードなので、チャンネル設定を書き込む
+	tlaWriteByte(CHANNEL_SEL_ADDR, 0x00);
+	// 読込を行うけど、レジスター読込とは少し異なるっぽい
+	value = tlaReadDataFormat(&id);
+	printf("Value is %4d, ID is %d, ",value,id);
+	return 0;
+}
+
+uint16_t dtla_getAdcCH1();
+uint16_t dtla_getAdcCH2();
+uint16_t dtla_getAdcCH3();
+uint16_t dtla_getAdcCH4();
+uint16_t dtla_getAdcCH5();
+uint16_t dtla_getAdcCH6();
+uint16_t dtla_getAdcCH7();

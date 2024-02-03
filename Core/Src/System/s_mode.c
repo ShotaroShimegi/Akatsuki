@@ -8,6 +8,7 @@
 #include<stdio.h>
 
 #include"System/s_mode.h"
+#include"System/s_test.h"
 
 #include"Unit/u_dial.h"
 
@@ -43,6 +44,8 @@ void selectMainMode(){
 			printf("Mode: No-mode Test Mode\n");
 			break;
 		case 3:
+			printf("Mode: Battery Test Mode\n");
+			selectTestMode();
 			break;
 		case 4:
 			break;
@@ -66,7 +69,45 @@ void selectRunMode(){
 }
 
 void selectTestMode(){
+	uint8_t mode = 0;
+	di_lightLeftLEDs(0xf0);
+	// ダイアルを起動する
+	ud_startDial();
+	// モード選択を実行する
+	mode = ud_selectDial(1);
+	// ダイアルをオフにする
+	ud_stopDial();
 
+	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
+	di_lightLeftLEDs(0x00),dbt_waitMs(100);
+	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
+	di_lightLeftLEDs(0x00),dbt_waitMs(100);
+
+	switch(mode){
+		case 0:
+			printf("TestMode: No-mode\n");
+			break;
+		case 1:
+			printf("TestMode: No-mode\n");
+			break;
+		case 2:
+			printf("TestMode: No-mode\n");
+			break;
+		case 3:
+			printf("TestMode: Battery Test\n");
+			testBattery();
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		default:	// 基本は存在しないはず
+			break;
+	}
 }
 
 void selectLogMode(){

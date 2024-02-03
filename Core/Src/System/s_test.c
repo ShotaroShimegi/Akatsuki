@@ -11,6 +11,9 @@
 
 #include"Device/d_encoder.h"
 #include"Device/d_basic_timer.h"
+#include"Device/d_motor.h"
+#include"Device/d_TLA2518.h"
+#include"Device/d_indicator.h"
 
 /**
 * @brief エンコーダの動作確認
@@ -40,18 +43,29 @@ extern int8_t motor_right_dir;
 
 void testMotor(void){
 	// 以下の内容はモータテスト用
-	enableMotors();
+	dm_enableMotors();
 	// 1秒ごとにDuty上げてみようか
 	for(uint8_t i=0;i<7;i++){
-		lightIndicators(i);
+		di_lightIndicators(i);
 //			driveMotors(i*5, i*5);
 		printf("Report: duty_L-R: %10d, %10d\n"
 				,duty_left_abs,duty_right_abs);
 		printf("Report: dir_L-R: %10d, %10d\n"
 							,motor_left_dir,motor_right_dir);
-		waitMs(1000);
+		dbt_waitMs(1000);
 	}
 	printf("END\n");
-	disableMotors();
-	waitMs(2000);
+	dm_disableMotors();
+	dbt_waitMs(2000);
+}
+
+/**
+* @brief 壁センサの
+*/
+void testBattery(void){
+	while(1){
+		dtla_getAdcCH0();
+		printf("Check Battery Now\n");
+		dbt_waitMs(500);
+	}
 }

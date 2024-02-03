@@ -10,4 +10,6 @@
 ../Core/Src/Device/d_TLA2518.c:48:6:tlaSPIRead	6
 ../Core/Src/Device/d_TLA2518.c:73:9:tlaReadByte	1
 ../Core/Src/Device/d_TLA2518.c:95:6:tlaWriteByte	1
-../Core/Src/Device/d_TLA2518.c:112:6:dtla_initTLA2518	3
+../Core/Src/Device/d_TLA2518.c:112:10:tlaReadDataFormat	1
+../Core/Src/Device/d_TLA2518.c:135:6:dtla_initTLA2518	3
+../Core/Src/Device/d_TLA2518.c:174:10:dtla_getAdcCH0	1
