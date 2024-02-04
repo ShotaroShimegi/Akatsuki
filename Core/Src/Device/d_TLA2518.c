@@ -171,21 +171,14 @@ void dtla_initTLA2518(void){
 // dtla_getAdcCH
 //	@brief 特定のチャンネルからデータを抜き取る
 //+++++++++++++++++++++++++++++++++++++++++++++++
-uint16_t dtla_getAdcCH0(){
+uint16_t dtla_getAdcCH(uint8_t hope_ch){
 	uint16_t value = 0;
-	uint8_t id = 9;
+	uint8_t ch_id = 9;
 	// まずは手動モードなので、チャンネル設定を書き込む
-	tlaWriteByte(CHANNEL_SEL_ADDR, 0x00);
+	tlaWriteByte(CHANNEL_SEL_ADDR, hope_ch);
 	// 読込を行うけど、レジスター読込とは少し異なるっぽい
-	value = tlaReadDataFormat(&id);
-	printf("Value is %4d, ID is %d, ",value,id);
-	return 0;
+	value = tlaReadDataFormat(&ch_id);
+	printf("Value is %4d, ID is %d, ",value,ch_id);
+	if(hope_ch == ch_id)	return value;
+	else					return 65535;
 }
-
-uint16_t dtla_getAdcCH1();
-uint16_t dtla_getAdcCH2();
-uint16_t dtla_getAdcCH3();
-uint16_t dtla_getAdcCH4();
-uint16_t dtla_getAdcCH5();
-uint16_t dtla_getAdcCH6();
-uint16_t dtla_getAdcCH7();

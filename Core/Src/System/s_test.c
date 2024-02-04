@@ -63,9 +63,10 @@ void testMotor(void){
 * @brief 壁センサの
 */
 void testBattery(void){
+	uint16_t battery_adc = 0;
 	while(1){
-		dtla_getAdcCH0();
-		printf("Check Battery Now\n");
+		dtla_getAdcCH(0x00);
+		printf("Check Battery is %d\n",battery_adc);
 		dbt_waitMs(500);
 	}
 }

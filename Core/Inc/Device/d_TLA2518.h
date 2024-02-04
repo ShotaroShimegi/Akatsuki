@@ -45,13 +45,6 @@
 void dtla_initTLA2518();
 
 //  ********　以下の関数は工事中 ********
-uint16_t dtla_getAdcCH0();
-uint16_t dtla_getAdcCH1();
-uint16_t dtla_getAdcCH2();
-uint16_t dtla_getAdcCH3();
-uint16_t dtla_getAdcCH4();
-uint16_t dtla_getAdcCH5();
-uint16_t dtla_getAdcCH6();
-uint16_t dtla_getAdcCH7();
+uint16_t dtla_getAdcCH(uint8_t);
 
 #endif /* INC_DEVICE_D_TLA2518_H_ */

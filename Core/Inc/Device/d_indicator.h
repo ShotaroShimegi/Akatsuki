@@ -23,6 +23,11 @@ void di_lightLeftLED1(bool);
 void di_lightLeftLED2(bool);
 void di_lightLeftLED3(bool);
 
+void di_lightSensorFL(bool);
+void di_lightSensorL(bool);
+void di_lightSensorR(bool);
+void di_lightSensorFR(bool);
+
 // 表示用一括変更用のLED制御関数
 void di_lightRightLEDs(uint8_t command);
 void di_lightLeftLEDs(uint8_t command);

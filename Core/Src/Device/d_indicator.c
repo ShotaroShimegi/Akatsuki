@@ -43,6 +43,25 @@ void di_lightRightLED3(bool com){
 	else	LL_GPIO_ResetOutputPin(IFR_LED3_GPIO_Port, IFR_LED3_Pin);
 }
 
+void di_lightSensorFL(bool com){
+	if(com)	LL_GPIO_SetOutputPin(SEN_LED_FL_GPIO_Port,SEN_LED_FL_Pin);
+	else	LL_GPIO_ResetOutputPin(IFR_LED3_GPIO_Port, IFR_LED3_Pin);
+}
+
+void di_lightSensorL(bool){
+	if(com)	LL_GPIO_SetOutputPin(SEN_LED_L_GPIO_Port, SEN_LED_L_Pin);
+	else	LL_GPIO_ResetOutputPin(SEN_LED_L_GPIO_Port, SEN_LED_L_Pin);
+}
+
+void di_lightSensorR(bool){
+	if(com)	LL_GPIO_SetOutputPin(SEN_LED_R_GPIO_Port, SEN_LED_R_Pin);
+	else	LL_GPIO_ResetOutputPin(SEN_LED_R_GPIO_Port, SEN_LED_R_Pin);
+}
+void di_lightSensorFR(bool){
+	if(com)	LL_GPIO_SetOutputPin(SEN_LED_FR_GPIO_Port, SEN_LED_FR_Pin);
+	else	LL_GPIO_ResetOutputPin(SEN_LED_FR_GPIO_Port, SEN_LED_FR_Pin);
+}
+
 /**
 * @brief LEDの点灯状態を一括して制御する関数群、正式運用時は一括のみを使う予定
 * @param 各LEDのON・OFF、上位4bit -> 左LED群、下位4bit ->　右LED群
