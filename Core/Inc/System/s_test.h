@@ -11,5 +11,6 @@
 void testEncoder(void);
 void testMotor(void);
 void testBattery(void);
+void testWallSensor(void);
 
 #endif /* INC_SYSTEM_S_TEST_H_ */

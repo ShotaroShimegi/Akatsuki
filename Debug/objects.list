@@ -10,6 +10,7 @@
 "./Core/Src/System/s_test.o"
 "./Core/Src/Unit/u_dial.o"
 "./Core/Src/Unit/u_music.o"
+"./Core/Src/Unit/u_wall_sensor.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
 "./Core/Src/spi.o"

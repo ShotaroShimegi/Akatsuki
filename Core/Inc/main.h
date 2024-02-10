@@ -85,12 +85,12 @@ void Error_Handler(void);
 #define SEN_LED_FL_GPIO_Port GPIOA
 #define BUZZER_Pin LL_GPIO_PIN_0
 #define BUZZER_GPIO_Port GPIOB
-#define IFL_LED1_Pin LL_GPIO_PIN_1
-#define IFL_LED1_GPIO_Port GPIOB
+#define IFL_LED3_Pin LL_GPIO_PIN_1
+#define IFL_LED3_GPIO_Port GPIOB
 #define IFL_LED2_Pin LL_GPIO_PIN_2
 #define IFL_LED2_GPIO_Port GPIOB
-#define IFL_LED3_Pin LL_GPIO_PIN_10
-#define IFL_LED3_GPIO_Port GPIOB
+#define IFL_LED1_Pin LL_GPIO_PIN_10
+#define IFL_LED1_GPIO_Port GPIOB
 #define IFR_LED1_Pin LL_GPIO_PIN_12
 #define IFR_LED1_GPIO_Port GPIOB
 #define IFR_LED2_Pin LL_GPIO_PIN_8

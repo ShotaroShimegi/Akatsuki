@@ -48,16 +48,16 @@ void di_lightSensorFL(bool com){
 	else	LL_GPIO_ResetOutputPin(IFR_LED3_GPIO_Port, IFR_LED3_Pin);
 }
 
-void di_lightSensorL(bool){
+void di_lightSensorL(bool com){
 	if(com)	LL_GPIO_SetOutputPin(SEN_LED_L_GPIO_Port, SEN_LED_L_Pin);
 	else	LL_GPIO_ResetOutputPin(SEN_LED_L_GPIO_Port, SEN_LED_L_Pin);
 }
 
-void di_lightSensorR(bool){
+void di_lightSensorR(bool com){
 	if(com)	LL_GPIO_SetOutputPin(SEN_LED_R_GPIO_Port, SEN_LED_R_Pin);
 	else	LL_GPIO_ResetOutputPin(SEN_LED_R_GPIO_Port, SEN_LED_R_Pin);
 }
-void di_lightSensorFR(bool){
+void di_lightSensorFR(bool com){
 	if(com)	LL_GPIO_SetOutputPin(SEN_LED_FR_GPIO_Port, SEN_LED_FR_Pin);
 	else	LL_GPIO_ResetOutputPin(SEN_LED_FR_GPIO_Port, SEN_LED_FR_Pin);
 }
@@ -81,4 +81,10 @@ void di_lightRightLEDs(uint8_t command){
 void di_lightIndicators(uint8_t command){
 	di_lightLeftLEDs(command&0xf0);
 	di_lightRightLEDs(command&0x0f);
+}
+void di_lightSensorLEDs(bool com_fl,bool com_l,bool com_r,bool com_fr){
+	di_lightSensorFL(com_fl);
+	di_lightSensorL(com_l);
+	di_lightSensorR(com_r);
+	di_lightSensorFR(com_fr);
 }

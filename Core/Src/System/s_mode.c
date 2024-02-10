@@ -28,20 +28,20 @@ void selectMainMode(){
 	// ダイアルをオフにする
 	ud_stopDial();
 
-	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
-	di_lightLeftLEDs(0x00),dbt_waitMs(100);
-	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
-	di_lightLeftLEDs(0x00),dbt_waitMs(100);
+	di_lightLeftLEDs(0xf0),dbt_waitMs(500);
+	di_lightLeftLEDs(0x00),dbt_waitMs(500);
+	di_lightLeftLEDs(0xf0),dbt_waitMs(500);
+	di_lightLeftLEDs(0x00),dbt_waitMs(500);
 
 	switch(mode){
 		case 0:
-			printf("Mode: No-mode Search\n");
+			printf("Mode: No-mode \n");
 			break;
 		case 1:
-			printf("Mode: No-mode Fast Run\n");
+			printf("Mode: No-mode Search\n");
 			break;
 		case 2:
-			printf("Mode: No-mode Test Mode\n");
+			printf("Mode: No-mode Fast Run\n");
 			break;
 		case 3:
 			printf("Mode: Battery Test Mode\n");
@@ -78,17 +78,18 @@ void selectTestMode(){
 	// ダイアルをオフにする
 	ud_stopDial();
 
-	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
-	di_lightLeftLEDs(0x00),dbt_waitMs(100);
-	di_lightLeftLEDs(0x0f),dbt_waitMs(100);
-	di_lightLeftLEDs(0x00),dbt_waitMs(100);
+	di_lightLeftLEDs(0xf0),dbt_waitMs(500);
+	di_lightLeftLEDs(0x00),dbt_waitMs(500);
+	di_lightLeftLEDs(0xf0),dbt_waitMs(500);
+	di_lightLeftLEDs(0x00),dbt_waitMs(500);
 
 	switch(mode){
 		case 0:
 			printf("TestMode: No-mode\n");
 			break;
 		case 1:
-			printf("TestMode: No-mode\n");
+			printf("TestMode: Wall Sensor Test\n");
+			testWallSensor();
 			break;
 		case 2:
 			printf("TestMode: No-mode\n");

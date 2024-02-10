@@ -9,6 +9,8 @@
 
 #include"System/s_test.h"
 
+#include"Unit/u_wall_sensor.h"
+
 #include"Device/d_encoder.h"
 #include"Device/d_basic_timer.h"
 #include"Device/d_motor.h"
@@ -60,13 +62,35 @@ void testMotor(void){
 }
 
 /**
-* @brief 壁センサの
+* @brief バッテリーチェッカー(TLA2718の動作確認)
 */
 void testBattery(void){
 	uint16_t battery_adc = 0;
 	while(1){
-		dtla_getAdcCH(0x00);
+		battery_adc = dtla_getAdcCH(0x00).value;
 		printf("Check Battery is %d\n",battery_adc);
 		dbt_waitMs(500);
 	}
+}
+
+/**
+* @brief 壁センサの動作確認モード
+*/
+void testWallSensor(void){
+	tla2518_t sensor[4];
+	dbt_basicTimerStart();
+
+	while(1){
+		uws_containSensorValue(sensor);
+		printf("FL(ID: %2x): %4d, L(ID: %2d): %4d, R(ID: %2d):%4d, FR(ID: %2d): %4d\n",
+				sensor[ARRAY_ID_FL].id,sensor[ARRAY_ID_FL].value,
+				sensor[ARRAY_ID_L].id,sensor[ARRAY_ID_L].value,
+				sensor[ARRAY_ID_R].id,sensor[ARRAY_ID_R].value,
+				sensor[ARRAY_ID_FR].id,sensor[ARRAY_ID_FR].value);
+		di_lightIndicators(0xf0);
+		dbt_waitMs(500);
+		di_lightIndicators(0x0f);
+		dbt_waitMs(500);
+	}
+
 }

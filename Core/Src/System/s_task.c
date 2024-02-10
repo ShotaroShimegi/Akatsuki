@@ -12,6 +12,7 @@
 
 #include "Unit/u_music.h"
 #include "Unit/u_dial.h"
+#include "Unit/u_wall_sensor.h"
 
 #include "Device/d_MPU6500.h"
 #include "Device/d_TLA2518.h"
@@ -29,21 +30,25 @@ uint32_t count1,count2,count_a,count_tim5;
 * @brief main loop 	前に1度だけ行う処理
 */
 void doInitializeTask(void){
-	dbz_enableMelody();
-	dbt_waitMs(1000);
 	printf("Akatsuki System Open\n");
+	// Deviceレイヤの初期化、ユニットに組み込んだら捨ててよい
+	dbz_enableMelody();
+	di_lightIndicators(0xff);
+	dbt_waitMs(500);
 	dm_disableMotors();
 	dmpu_initIMU();
-	dtla_initTLA2518();
+//	dtla_initTLA2518();
 	um_MelodySummer();
 	de_enableEncoder();
 
+	// Device Unitの初期化
+	uws_initWallSensor();
+
 //	basicTimerStart();
 
-	// 初期化修了
-	di_lightIndicators(0xff);
-	dbt_waitMs(500);
+	// 初期化修了のインターフェース
 	di_lightIndicators(0x00);
+	dbt_waitMs(500);
 }
 
 /**
@@ -61,6 +66,8 @@ void doloopTask(void){
 * @brief 1kHz タイマ割込みのタスク
 */
 void doCallbackTask(void){
+	uws_updateWallSensor();		// 壁センサの更新
+								// 測定絡みの更新
 }
 
 /**

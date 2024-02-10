@@ -1,3 +1,4 @@
-../Core/Src/System/s_test.c:21:6:testEncoder	1
-../Core/Src/System/s_test.c:44:6:testMotor	2
-../Core/Src/System/s_test.c:65:6:testBattery	1
+../Core/Src/System/s_test.c:23:6:testEncoder	1
+../Core/Src/System/s_test.c:46:6:testMotor	2
+../Core/Src/System/s_test.c:67:6:testBattery	1
+../Core/Src/System/s_test.c:79:6:testWallSensor	1

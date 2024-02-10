@@ -220,7 +220,8 @@ void TIM1_UP_TIM10_IRQHandler(void)
 /**
   * @brief This function handles TIM5 global interrupt.
   */
-void TIM5_IRQHandler(void) {
+void TIM5_IRQHandler(void)
+{
   /* USER CODE BEGIN TIM5_IRQn 0 */
 	count_tim5++;
 	// 左モータのHigh周期

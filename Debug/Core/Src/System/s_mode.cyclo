@@ -2,4 +2,4 @@
 ../Core/Src/System/s_mode.c:63:6:selectSearchMode	1
 ../Core/Src/System/s_mode.c:67:6:selectRunMode	1
 ../Core/Src/System/s_mode.c:71:6:selectTestMode	5
-../Core/Src/System/s_mode.c:113:6:selectLogMode	1
+../Core/Src/System/s_mode.c:114:6:selectLogMode	1

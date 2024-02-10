@@ -32,5 +32,5 @@ void di_lightSensorFR(bool);
 void di_lightRightLEDs(uint8_t command);
 void di_lightLeftLEDs(uint8_t command);
 void di_lightIndicators(uint8_t command);
-
+void di_lightSensorLEDs(bool,bool,bool,bool);
 #endif /* INC_DEVICE_D_INDICATOR_H_ */

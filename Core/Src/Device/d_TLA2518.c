@@ -121,8 +121,8 @@ uint16_t tlaReadDataFormat(uint8_t* id) {
 	tlaSPIControl(SPI1, trans_data, receive_data, 3);
 	tlaSPIRead(SPI1, trans_data, receive_data, 3);
 
-	value = ((uint16_t)receive_data[0]) << 4 | ((receive_data[1] & 0x40) >> 4);
-	*id = receive_data[1] & 0x04;
+	value = ((uint16_t)receive_data[0]) << 4 | ((receive_data[1] & 0xf0) >> 4);
+	*id = receive_data[1] & 0x0f;
 	return value;
 }
 
@@ -171,14 +171,16 @@ void dtla_initTLA2518(void){
 // dtla_getAdcCH
 //	@brief 特定のチャンネルからデータを抜き取る
 //+++++++++++++++++++++++++++++++++++++++++++++++
-uint16_t dtla_getAdcCH(uint8_t hope_ch){
-	uint16_t value = 0;
+tla2518_t dtla_getAdcCH(uint8_t hope_ch){
 	uint8_t ch_id = 9;
+	tla2518_t temp;
 	// まずは手動モードなので、チャンネル設定を書き込む
 	tlaWriteByte(CHANNEL_SEL_ADDR, hope_ch);
 	// 読込を行うけど、レジスター読込とは少し異なるっぽい
-	value = tlaReadDataFormat(&ch_id);
-	printf("Value is %4d, ID is %d, ",value,ch_id);
-	if(hope_ch == ch_id)	return value;
-	else					return 65535;
+	temp.value = tlaReadDataFormat(&ch_id);
+	temp.id = ch_id;
+//	printf("Value is %4d, ID is %d, ",value,ch_id);
+//	if(hope_ch == ch_id)	return value;
+//	else					return 65535;
+	return temp;
 }

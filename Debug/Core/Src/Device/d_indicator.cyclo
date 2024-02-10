@@ -6,6 +6,11 @@
 ../Core/Src/Device/d_indicator.c:31:6:di_lightRightLED1	2
 ../Core/Src/Device/d_indicator.c:36:6:di_lightRightLED2	2
 ../Core/Src/Device/d_indicator.c:41:6:di_lightRightLED3	2
-../Core/Src/Device/d_indicator.c:50:6:di_lightLeftLEDs	1
-../Core/Src/Device/d_indicator.c:56:6:di_lightRightLEDs	1
-../Core/Src/Device/d_indicator.c:62:6:di_lightIndicators	1
+../Core/Src/Device/d_indicator.c:46:6:di_lightSensorFL	2
+../Core/Src/Device/d_indicator.c:51:6:di_lightSensorL	2
+../Core/Src/Device/d_indicator.c:56:6:di_lightSensorR	2
+../Core/Src/Device/d_indicator.c:60:6:di_lightSensorFR	2
+../Core/Src/Device/d_indicator.c:69:6:di_lightLeftLEDs	1
+../Core/Src/Device/d_indicator.c:75:6:di_lightRightLEDs	1
+../Core/Src/Device/d_indicator.c:81:6:di_lightIndicators	1
+../Core/Src/Device/d_indicator.c:85:6:di_lightSensorLEDs	1

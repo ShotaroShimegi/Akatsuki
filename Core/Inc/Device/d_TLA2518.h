@@ -39,12 +39,17 @@
 #define		CHANNEL_SEL_VALUE		0x00		// manual時のピン指定、0-3bitで1つのみ指定 ch0-7
 #define		AUTO_SEQ_CH_SEL_VALUE 	0x00		// Auto Sequence時のCH設定, 必要なら0xcd
 
+typedef struct{
+	uint16_t value;
+	uint8_t id;
+}tla2518_t;
+
 /*============================================================
 		関数プロトタイプ宣言
 ============================================================*/
 void dtla_initTLA2518();
 
 //  ********　以下の関数は工事中 ********
-uint16_t dtla_getAdcCH(uint8_t);
+tla2518_t dtla_getAdcCH(uint8_t);
 
 #endif /* INC_DEVICE_D_TLA2518_H_ */
